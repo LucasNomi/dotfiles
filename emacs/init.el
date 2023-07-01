@@ -32,7 +32,7 @@
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
 (setq backup-directory-alist '((".*" . "~/.emacs.d/backups/")))
-(setq auto-save-file-name-transforms `((".*" "~/.emacs-saves/" t)))
+(setq auto-save-file-name-transforms `((".*" "~/.emacs.d/auto-saves" t)))
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file t)
 
