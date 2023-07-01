@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+if [ -x /usr/bin/dircolors ]; then
+  test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+  alias ls='ls --color=auto'
+  alias la='ls -al --color=auto'
+  alias dir='dir --color=auto'
+  alias vdir='vdir --color=auto'
+  alias grep='grep --color=auto'
+  alias egrep='egrep --color=auto'
+  alias fgrep='fgrep  --color=auto'
+fi
+
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias d='cd ~/documentos'
+alias dl='cd ~/downloads'
+alias dp='cd ~/documentos/projetos'
+alias path='echo -e ${PATH//:\\n}'
