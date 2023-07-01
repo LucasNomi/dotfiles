@@ -9,9 +9,11 @@
            gcs-done))
 
 (add-hook 'emacs-startup-hook #'display-startup-time)
+(add-hook 'emacs-startup-hook #'scroll-lock-mode)
 
 (setq inhibit-startup-screen t)
 (setq visible-bell t)
+(setq scroll-margin 10)
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (tooltip-mode -1)
@@ -30,6 +32,7 @@
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
 (setq backup-directory-alist '((".*" . "~/.emacs.d/backups/")))
+(setq auto-save-file-name-transforms '((".*" . "~/.emacs.d/autosaves/")))
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file t)
 
@@ -51,7 +54,7 @@
 (use-package doom-themes
 	:ensure t
   :init
-  (load-theme 'doom-gruvbox t)
+  (load-theme 'doom-homage-black t)
 	:config
 	(setq doom-themes-enable-bold t)
 	(setq doom-themes-enable-italic t)
