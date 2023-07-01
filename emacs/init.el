@@ -27,7 +27,8 @@
 (setq-default tab-width 2)
 (setq-default indent-tabs-mode nil)
 (column-number-mode t)
-(add-to-list 'default-frame-alist '(fullscreen . maximazed))
+(add-to-list 'initial-frame-alist '(fullscreen . maximized))
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
 
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
