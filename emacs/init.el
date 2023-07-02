@@ -21,6 +21,8 @@
 (tooltip-mode -1)
 (scroll-bar-mode -1)
 (set-fringe-mode 10)
+(setq-default cursor-type 'box)
+(setq-default cursor-in-non-selected-windows 'bar)
 (blink-cursor-mode -1)
 (setq use-dialog-box nil)
 (setq vc-follow-symlinks t)
@@ -122,4 +124,6 @@
   :ensure t
   :after lsp)
 
-
+(use-package flycheck
+  :ensure t
+  :hook (lsp-mode . flycheck-mode))
