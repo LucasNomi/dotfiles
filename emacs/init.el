@@ -1,8 +1,8 @@
-;;TODO: PROPER ORGANIZATION (emacs interaction 3)
-
+;; PERFORMANCE 
 (setq gc-cons-threshold 100000000)
 (setq read-process-output-max (* 1024 1024))
 
+;; SHOW TIME TO LOAD EMACS
 (defun display-startup-time ()
   (message "Emacs loaded in %s with %d garbage collections."
            (format "%.2f seconds"
@@ -10,9 +10,12 @@
                      (time-subtract after-init-time before-init-time)))
            gcs-done))
 
-(add-hook 'emacs-startup-hook #'display-startup-time)
 (add-hook 'emacs-startup-hook #'scroll-lock-mode)
 
+;; EMACS STARTS IN SCROLL-LOCK
+(add-hook 'emacs-startup-hook #'display-startup-time)
+
+;; VISUAL CONFIG
 (setq inhibit-startup-screen t)
 (setq visible-bell t)
 (setq scroll-margin 10)
@@ -34,15 +37,23 @@
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
+;; PLACEHOLDER FOR TYPESCRIPT MODE
+(add-to-list 'auto-mode-alist '("\\.ts\\'" . js-mode))
+
+;; KEYBINDS
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
+;; SET BACKUP AND AUTO-SAVE DIRS
 (setq backup-directory-alist '((".*" . "~/.emacs.d/backups/")))
 (unless (file-exists-p "~/.emacs.d/auto-saves/")
   (make-directory "~/.emacs.d/auto-saves/"))
 (setq auto-save-file-name-transforms `((".*" "~/.emacs.d/auto-saves" t)))
+
+;; SET CUSTOM FILE 
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file t)
 
+;; PACKAGE SETUP
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/") t)
@@ -51,98 +62,18 @@
 (unless package-archive-contents
   (package-refresh-contents))
 
+;; INSTALL USE-PACKAGE IF IT DOES NOT EXIST
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
 
-(use-package auto-package-update
-  :ensure t
-  :custom
-  (auto-package-update-interval 60)
-  (auto-package-update-prompt-before-update t)
-  (auto-package-update-hide-results t)
-  :config
-  (auto-package-update-maybe)
-  (auto-package-update-at-time "23:00"))
-
-(use-package diminish
-  :ensure t)
-
-(with-eval-after-load 'scroll-lock (diminish 'scroll-lock-mode))
-(with-eval-after-load 'face-remap (diminish 'text-scale-mode))
-
-(use-package doom-themes
-	:ensure t
-  :init (load-theme 'doom-homage-black t)
-	:config
-	(setq doom-themes-enable-bold t)
-	(setq doom-themes-enable-italic t)
-	(doom-themes-visual-bell-config))
-
-(use-package swiper
-  :ensure t)
-
-(use-package counsel
-  :ensure t)
-
-(use-package ivy
-  :diminish
-  :ensure t
-  :config
-  (ivy-mode t)
-  (setq ivy-use-virtual-buffers t)
-  (setq enable-recursive-minibuffers t)
-  (setq ivy-initial-inputs-alist nil) 
-  :bind
-  (("C-s" . swiper)
-  ("M-x" . counsel-M-x)
-  ("C-x C-f" . counsel-find-file)
-  ("C-x b" . counsel-ibuffer)
-  :map ivy-minibuffer-map
-  ("TAB" . ivy-alt-done)))
-
-(use-package which-key
-  :defer 0
-  :diminish
-  :ensure t
-  :config
-  (which-key-mode t)
-  (setq which-key-popup-type 'side-window)
-  (setq which-key-side-window-location 'right)
-  (setq whick-key-side-window-max-width 0.5))
-
-(use-package lsp-mode
-  :ensure t
-  :commands (lsp lsp-deferred)
-  :init (setq lsp-keymap-prefix "C-c l")
-  :config
-  (lsp-enable-which-key-integration t)
-  (setq lsp-inlay-hint-enable t)
-  (setq lsp-log-io nil))
-
-(use-package lsp-ui
-  :ensure t
-  :hook (lsp-mode . lsp-ui-mode)
-  :custom (lsp-ui-doc-position 'bottom))
-
-(use-package lsp-ivy
-  :ensure t
-  :after lsp)
-
-(use-package flycheck
-  :ensure t
-  :hook (lsp-mode . flycheck-mode))
-
-(use-package evil
-  :ensure t
-  :config (evil-mode))
-
-(use-package yasnippet
-  :ensure t
-  :config
-  (yas-global-mode t))
-
-(use-package yasnippet-snippets
-  :ensure t
-  :after yasnippet)
+;; LOAD ALL PLUGINS CONFIG 
+(load-file "~/.emacs.d/plugins/auto-package-update/load-auto-package-update.el")
+(load-file "~/.emacs.d/plugins/diminish/load-diminish.el")
+(load-file "~/.emacs.d/plugins/doom-themes/load-doom-themes.el")
+(load-file "~/.emacs.d/plugins/ivy/load-ivy.el")
+(load-file "~/.emacs.d/plugins/which-key/load-which-key.el")
+(load-file "~/.emacs.d/plugins/lsp/load-lsp.el")
+(load-file "~/.emacs.d/plugins/evil/load-evil.el")
+(load-file "~/.emacs.d/plugins/yasnippet/load-yasnippet.el")
   
