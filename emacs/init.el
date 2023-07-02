@@ -37,6 +37,8 @@
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
 (setq backup-directory-alist '((".*" . "~/.emacs.d/backups/")))
+(unless (file-exists-p "~/.emacs.d/auto-saves/")
+  (make-directory "~/.emacs.d/auto-saves/")
 (setq auto-save-file-name-transforms `((".*" "~/.emacs.d/auto-saves" t)))
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file t)
@@ -127,3 +129,7 @@
 (use-package flycheck
   :ensure t
   :hook (lsp-mode . flycheck-mode))
+
+(use-package evil
+  :ensure t
+  :config (evil-mode))
