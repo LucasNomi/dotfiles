@@ -23,7 +23,8 @@
 (setq use-dialog-box nil)
 (setq vc-follow-symlinks t)
 (global-hl-line-mode t)
-(global-display-line-numbers-mode t)
+(global-display-line-numbers-mode)
+(setq-default display-line-numbers-width 3)
 (setq-default tab-width 2)
 (setq-default indent-tabs-mode nil)
 (column-number-mode t)
@@ -58,8 +59,6 @@
   :config
   (auto-package-update-maybe)
   (auto-package-update-at-time "23:00"))
-  
-  
 
 (use-package diminish
   :ensure t)
