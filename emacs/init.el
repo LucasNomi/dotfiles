@@ -122,12 +122,4 @@
   :ensure t
   :after lsp)
 
-;; Remove when using emacs 29
-(use-package tree-sitter
-  :diminish
-  :ensure t
-  :init (global-tree-sitter-mode))
 
-(use-package tree-sitter-langs
-  :after tree-sitter
-  :ensure t)
