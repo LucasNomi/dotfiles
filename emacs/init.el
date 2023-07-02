@@ -1,3 +1,5 @@
+;;TODO: PROPER ORGANIZATION (emacs interaction 3)
+
 (setq gc-cons-threshold 100000000)
 (setq read-process-output-max (* 1024 1024))
 
@@ -23,8 +25,7 @@
 (setq use-dialog-box nil)
 (setq vc-follow-symlinks t)
 (global-hl-line-mode t)
-(global-display-line-numbers-mode)
-(setq-default display-line-numbers-width 3)
+(global-linum-mode)
 (setq-default tab-width 2)
 (setq-default indent-tabs-mode nil)
 (column-number-mode t)
@@ -120,3 +121,13 @@
 (use-package lsp-ivy
   :ensure t
   :after lsp)
+
+;; Remove when using emacs 29
+(use-package tree-sitter
+  :diminish
+  :ensure t
+  :init (global-tree-sitter-mode))
+
+(use-package tree-sitter-langs
+  :after tree-sitter
+  :ensure t)
