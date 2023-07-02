@@ -38,7 +38,7 @@
 
 (setq backup-directory-alist '((".*" . "~/.emacs.d/backups/")))
 (unless (file-exists-p "~/.emacs.d/auto-saves/")
-  (make-directory "~/.emacs.d/auto-saves/")
+  (make-directory "~/.emacs.d/auto-saves/"))
 (setq auto-save-file-name-transforms `((".*" "~/.emacs.d/auto-saves" t)))
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file t)
@@ -67,6 +67,9 @@
 
 (use-package diminish
   :ensure t)
+
+(with-eval-after-load 'scroll-lock (diminish 'scroll-lock-mode))
+(with-eval-after-load 'face-remap (diminish 'text-scale-mode))
 
 (use-package doom-themes
 	:ensure t
@@ -133,3 +136,13 @@
 (use-package evil
   :ensure t
   :config (evil-mode))
+
+(use-package yasnippet
+  :ensure t
+  :config
+  (yas-global-mode t))
+
+(use-package yasnippet-snippets
+  :ensure t
+  :after yasnippet)
+  
