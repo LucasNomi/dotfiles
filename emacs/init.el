@@ -65,8 +65,7 @@
 
 (use-package doom-themes
 	:ensure t
-  :init
-  (load-theme 'doom-homage-black t)
+  :init (load-theme 'doom-homage-black t)
 	:config
 	(setq doom-themes-enable-bold t)
 	(setq doom-themes-enable-italic t)
@@ -103,3 +102,18 @@
   (setq which-key-popup-type 'side-window)
   (setq which-key-side-window-location 'right)
   (setq whick-key-side-window-max-width 0.5))
+
+(use-package lsp-mode
+  :ensure t
+  :commands (lsp lsp-deferred)
+  :init (setq lsp-keymap-prefix "C-c l")
+  :config (lsp-enable-which-key-integration t))
+
+(use-package lsp-ui
+  :ensure t
+  :hook (lsp-mode . lsp-ui-mode)
+  :custom (lsp-ui-doc-position 'bottom))
+
+(use-package lsp-ivy
+  :ensure t
+  :after lsp)
