@@ -2,6 +2,10 @@
   :ensure t
   :commands (lsp lsp-deferred)
   :init (setq lsp-keymap-prefix "C-c l")
+  :hook
+  (c-mode . lsp-mode)
+  (python-mode . lsp-mode)
+  (js-jsx-mode . lsp-mode)
   :config
   (lsp-enable-which-key-integration t)
   (setq lsp-inlay-hint-enable t)
