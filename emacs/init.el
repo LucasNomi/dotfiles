@@ -75,5 +75,4 @@
 (load-file "~/.emacs.d/plugins/which-key/load-which-key.el")
 (load-file "~/.emacs.d/plugins/lsp/load-lsp.el")
 (load-file "~/.emacs.d/plugins/evil/load-evil.el")
-(load-file "~/.emacs.d/plugins/yasnippet/load-yasnippet.el")
   
