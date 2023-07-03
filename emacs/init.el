@@ -37,17 +37,17 @@
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
-;; PLACEHOLDER FOR TYPESCRIPT MODE
-(add-to-list 'auto-mode-alist '("\\.ts\\'" . js-mode))
 
 ;; KEYBINDS
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
 ;; SET BACKUP AND AUTO-SAVE DIRS
+(unless (file-exists-p "~/.emacs.d/autosaves/")
+  (make-directory "~/.emacs.d/autosaves/"))
+(setq auto-save-file-name-transforms '((".*" "~/.emacs.d/autosaves" t)))
+(unless (file-exists-p "~/.emacs.d/backups/")
+  (make-directory "~/.emacs.d/backups/"))
 (setq backup-directory-alist '((".*" . "~/.emacs.d/backups/")))
-(unless (file-exists-p "~/.emacs.d/auto-saves/")
-  (make-directory "~/.emacs.d/auto-saves/"))
-(setq auto-save-file-name-transforms `((".*" "~/.emacs.d/auto-saves" t)))
 
 ;; SET CUSTOM FILE 
 (setq custom-file "~/.emacs.d/custom.el")
@@ -75,4 +75,7 @@
 (load-file "~/.emacs.d/plugins/which-key/load-which-key.el")
 (load-file "~/.emacs.d/plugins/lsp/load-lsp.el")
 (load-file "~/.emacs.d/plugins/evil/load-evil.el")
+(load-file "~/.emacs.d/plugins/company/load-company.el")
   
+;; MODES
+(add-to-list 'auto-mode-alist '("\\.ts\\'" . js-jsx-mode))
