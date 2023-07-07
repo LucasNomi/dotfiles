@@ -1,4 +1,4 @@
-;; PERFORMANCE 
+;; IMPROVE PERFORMANCE (mostly because of lsp) 
 (setq gc-cons-threshold 100000000)
 (setq read-process-output-max (* 1024 1024))
 
@@ -10,12 +10,14 @@
                      (time-subtract after-init-time before-init-time)))
            gcs-done))
 
-(add-hook 'emacs-startup-hook #'scroll-lock-mode)
-
-;; EMACS STARTS IN SCROLL-LOCK
 (add-hook 'emacs-startup-hook #'display-startup-time)
 
-;; VISUAL CONFIG
+;; EMACS STARTS IN SCROLL-LOCK
+(add-hook 'emacs-startup-hook #'scroll-lock-mode)
+
+;; CHANGE DEFAULT VISUAL OF EMACS
+(add-to-list 'initial-frame-alist '(fullscreen . maximized))
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
 (setq inhibit-startup-screen t)
 (setq visible-bell t)
 (setq scroll-margin 10)
@@ -24,24 +26,22 @@
 (tooltip-mode -1)
 (scroll-bar-mode -1)
 (set-fringe-mode 10)
+(global-linum-mode)
+(setq use-dialog-box nil)
+(column-number-mode t)
+
+;; CHANGE DEFAULT CURSOR TYPE TO BOX ANYWHERE (AND REMOVE BLINK EFFECT)
 (setq-default cursor-type 'box)
 (setq-default cursor-in-non-selected-windows 'bar)
 (blink-cursor-mode -1)
-(setq use-dialog-box nil)
-(setq vc-follow-symlinks t)
-(global-hl-line-mode t)
-(global-linum-mode)
+
+;; INDENTATION SETTINGS
 (setq-default tab-width 2)
-(setq-default indent-tabs-mode nil)
-(column-number-mode t)
-(add-to-list 'initial-frame-alist '(fullscreen . maximized))
-(add-to-list 'default-frame-alist '(fullscreen . maximized))
 
+;; VERSION CONTROL SETTINGS
+(setq vc-follow-symlinks t)
 
-;; KEYBINDS
-(global-set-key (kbd "<escape>") 'keyboard-escape-quit)
-
-;; SET BACKUP AND AUTO-SAVE DIRS
+;; CREATES (IF IT DOES NOT EXIST) AND CHANGES BACKUP AND AUTOSAVES DIRECTORIES
 (unless (file-exists-p "~/.emacs.d/autosaves/")
   (make-directory "~/.emacs.d/autosaves/"))
 (setq auto-save-file-name-transforms '((".*" "~/.emacs.d/autosaves" t)))
@@ -49,11 +49,11 @@
   (make-directory "~/.emacs.d/backups/"))
 (setq backup-directory-alist '((".*" . "~/.emacs.d/backups/")))
 
-;; SET CUSTOM FILE 
+;; CUSTOM SETTINGS IS SAVED IN IT'S OWN FILE 
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file t)
 
-;; PACKAGE SETUP
+;; PACKAGE SETUP AND USING MELPA AS A PACKAGE ARCHIVE
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/") t)
@@ -62,7 +62,7 @@
 (unless package-archive-contents
   (package-refresh-contents))
 
-;; INSTALL USE-PACKAGE IF IT DOES NOT EXIST
+;; INSTALL USE-PACKAGE IF IT IS NOT INSTALLED
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
@@ -71,10 +71,10 @@
 (load-file "~/.emacs.d/plugins/auto-package-update/load-auto-package-update.el")
 (load-file "~/.emacs.d/plugins/diminish/load-diminish.el")
 (load-file "~/.emacs.d/plugins/doom-themes/load-doom-themes.el")
-(load-file "~/.emacs.d/plugins/ivy/load-ivy.el")
-(load-file "~/.emacs.d/plugins/which-key/load-which-key.el")
-(load-file "~/.emacs.d/plugins/lsp/load-lsp.el")
 (load-file "~/.emacs.d/plugins/evil/load-evil.el")
+(load-file "~/.emacs.d/plugins/which-key/load-which-key.el")
+(load-file "~/.emacs.d/plugins/ivy/load-ivy.el")
+(load-file "~/.emacs.d/plugins/lsp/load-lsp.el")
 (load-file "~/.emacs.d/plugins/company/load-company.el")
   
 ;; MODES
