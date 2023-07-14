@@ -37,6 +37,7 @@
 
 ;; INDENTATION SETTINGS
 (setq-default tab-width 2)
+(setq-default indent-tabs-mode nil)
 
 ;; VERSION CONTROL SETTINGS
 (setq vc-follow-symlinks t)
