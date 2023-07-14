@@ -1,0 +1,31 @@
+env:
+  TERM: xterm-256color
+
+window:
+  padding:
+    x: 10
+    y: 10
+  decorations: none
+  startup_mode: Maximized
+  decorations_theme_variant: dark
+
+scrolling:
+  history: 250
+
+font:
+  size: 13.0
+  normal:
+    family: Hack
+    style: Regular
+  bold:
+    family: Hack
+    style: Bold
+  italic:
+    family: Hack
+    style: Bold
+  bold_italic:
+    family: Hack
+    style: Bold Italic
+
+selection:
+  save_to_clipboard: true
