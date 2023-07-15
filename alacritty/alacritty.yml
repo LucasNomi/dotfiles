@@ -5,9 +5,7 @@ window:
   padding:
     x: 10
     y: 10
-  decorations: none
   startup_mode: Maximized
-  decorations_theme_variant: dark
 
 scrolling:
   history: 250
@@ -22,7 +20,7 @@ font:
     style: Bold
   italic:
     family: Hack
-    style: Bold
+    style: Italic
   bold_italic:
     family: Hack
     style: Bold Italic
