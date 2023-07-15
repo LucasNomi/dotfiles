@@ -5,7 +5,7 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
-  Plug 'hardselius/warlock'
+  Plug 'morhetz/gruvbox'
 call plug#end()
 
 " General Config
@@ -23,8 +23,9 @@ endif
 
 " Visual Config
 set number
+set background=dark
 set termguicolors
-colorscheme warlock 
+colorscheme gruvbox
 set showcmd
 set cmdheight=2
 set history=50
