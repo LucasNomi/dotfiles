@@ -18,6 +18,7 @@
 ;; CHANGE DEFAULT VISUAL OF EMACS
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
+(set-face-attribute 'default nil :font "JetBrains Mono" :height 200)
 (setq inhibit-startup-screen t)
 (setq visible-bell t)
 (setq scroll-margin 10)
