@@ -78,6 +78,7 @@
 (load-file "~/.emacs.d/plugins/ivy/load-ivy.el")
 (load-file "~/.emacs.d/plugins/lsp/load-lsp.el")
 (load-file "~/.emacs.d/plugins/company/load-company.el")
-  
+(load-file "~/.emacs.d/plugins/yasnippet/load-yasnippet.el")  
+
 ;; MODES
 (add-to-list 'auto-mode-alist '("\\.ts\\'" . js-jsx-mode))
