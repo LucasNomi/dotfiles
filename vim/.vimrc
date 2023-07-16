@@ -6,10 +6,27 @@ endif
 
 call plug#begin('~/.vim/plugged')
   Plug 'morhetz/gruvbox'
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
+  
+" COC Config
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
 
 " General Config
 set nocompatible
+set updatetime=300
 set nobackup
 set nowritebackup
 set noswapfile
@@ -23,6 +40,7 @@ endif
 
 " Visual Config
 set number
+set signcolumn=yes
 set background=dark
 set termguicolors
 colorscheme gruvbox
