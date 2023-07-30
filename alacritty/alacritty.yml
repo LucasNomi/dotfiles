@@ -11,7 +11,7 @@ scrolling:
   history: 250
 
 font:
-  size: 13.0
+  size: 20.0
   normal:
     family: Hack
     style: Regular
