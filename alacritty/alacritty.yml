@@ -8,7 +8,7 @@ window:
   startup_mode: Maximized
 
 scrolling:
-  history: 250
+  history: 1500
 
 font:
   size: 20.0
