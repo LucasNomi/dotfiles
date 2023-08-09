@@ -12,9 +12,9 @@
 
 (add-hook 'emacs-startup-hook #'scroll-lock-mode)
 
-(add-to-list 'initial-frame-alist '(fullscreen . maximized))
-(add-to-list 'default-frame-alist '(fullscreen . maximized))
-(set-face-attribute 'default nil :font "JetBrains Mono" :height 200)
+(add-to-list 'default-frame-alist '(height . 30))
+(add-to-list 'default-frame-alist '(width . 120))
+(set-face-attribute 'default nil :font "JetBrains Mono" :height 140)
 (setq inhibit-startup-screen t)
 (setq visible-bell t)
 (setq scroll-margin 10)
@@ -22,7 +22,6 @@
 (tool-bar-mode -1)
 (tooltip-mode -1)
 (scroll-bar-mode -1)
-(set-fringe-mode 10)
 (global-linum-mode)
 (setq use-dialog-box nil)
 (column-number-mode t)
@@ -30,9 +29,6 @@
 (setq-default cursor-type 'box)
 (setq-default cursor-in-non-selected-windows 'bar)
 (blink-cursor-mode -1)
-
-(setq-default tab-width 2)
-(setq-default indent-tabs-mode nil)
 
 (setq vc-follow-symlinks t)
 

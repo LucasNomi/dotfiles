@@ -5,7 +5,7 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
-  Plug 'morhetz/gruvbox'
+  Plug 'rakr/vim-one'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
   
@@ -41,9 +41,9 @@ endif
 " Visual Config
 set number
 set signcolumn=yes
-set background=dark
+set background=light
 set termguicolors
-colorscheme gruvbox
+colorscheme one
 set showcmd
 set cmdheight=2
 set history=50
@@ -52,10 +52,10 @@ set wildmode=list:longest
 set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 
 if has("gui_running")
-  set guifont=JetBrainsMono\ 20
+  set guifont=JetBrainsMono\ 14
   set guioptions=aegit
-  set lines=900
-  set columns=900
+  set lines=30
+  set columns=120
 endif
 
 " Text Config
