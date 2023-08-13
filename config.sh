@@ -3,10 +3,8 @@ source programs.sh
 
 if ! [ -x "$(command -v stow)" ]; then
     echo "stow not found"
-    echo "Proceeding to installation..."
     sudo apt install stow
 else
-    echo "stow found"
     echo "Proceeding to configuration..."
 fi
 
