@@ -6,11 +6,11 @@ window:
     columns: 120 
     lines: 30
   padding:
-    x: 6 
-    y: 6
+    x: 10 
+    y: 10
 
 font:
-  size: 10.0
+  size: 14.0
   normal:
     family: Hack
     style: Regular
