@@ -34,10 +34,6 @@ set encoding=utf-8
 set mouse=a
 set clipboard=unnamed
 
-if has("gui_running")
-  set belloff=all
-endif
-
 " Visual Config
 set number
 set signcolumn=yes
@@ -50,13 +46,6 @@ set history=50
 set wildmenu
 set wildmode=list:longest
 set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
-
-if has("gui_running")
-  set guifont=JetBrainsMono\ 14
-  set guioptions=aegit
-  set lines=30
-  set columns=120
-endif
 
 " Text Config
 syntax enable
