@@ -12,8 +12,7 @@
 
 (add-hook 'emacs-startup-hook #'scroll-lock-mode)
 
-(add-to-list 'default-frame-alist '(height . 30))
-(add-to-list 'default-frame-alist '(width . 120))
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
 (set-face-attribute 'default nil :font "JetBrains Mono" :height 140)
 (setq inhibit-startup-screen t)
 (setq visible-bell t)
