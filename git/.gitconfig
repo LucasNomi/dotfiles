@@ -1,4 +1,4 @@
 [core]
-	editor = vim
+	editor = emacs
 [init]
 	defaultBranch = main
