@@ -1,4 +1,2 @@
-[core]
-	editor = emacs
 [init]
 	defaultBranch = main
