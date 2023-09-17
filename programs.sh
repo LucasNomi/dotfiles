@@ -1,2 +1,2 @@
 #!/bin/bash 
-export PROGRAMS=("neofetch" "emacs" "vim" "git" "tmux" "alacritty")
+export PROGRAMS=("neofetch" "emacs" "git" "tmux" "alacritty")
