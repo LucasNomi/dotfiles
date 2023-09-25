@@ -1,5 +1,0 @@
-vim/.vim/plugged/*
-emacs/.emacs.d/elpa/*
-emacs/.emacs.d/eln-cache/*
-emacs/.emacs.d/custom.el
-emacs/.emacs.d/backups/*
