@@ -1,2 +1,2 @@
 #!/bin/bash 
-export PROGRAMS=("neofetch" "tmux" "alacritty")
+export PROGRAMS=("neofetch" "tmux" "htop" "alacritty")
