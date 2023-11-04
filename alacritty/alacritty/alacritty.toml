@@ -1,51 +1,5 @@
-[colors.bright]
-black = "#5c6370"
-blue = "#61afef"
-cyan = "#56b6c2"
-green = "#98c379"
-magenta = "#c678dd"
-red = "#e06c75"
-white = "#ffffff"
-yellow = "#d19a66"
-
-[colors.normal]
-black = "#282c34"
-blue = "#61afef"
-cyan = "#56b6c2"
-green = "#98c379"
-magenta = "#c678dd"
-red = "#e06c75"
-white = "#abb2bf"
-yellow = "#d19a66"
-
-[colors.primary]
-background = "#ffffff"
-foreground = "#282c34"
-
 [env]
 TERM = "xterm-256color"
-
-[font]
-size = 14.0
-
-[font.bold]
-family = "Hack"
-style = "Bold"
-
-[font.bold_italic]
-family = "Hack"
-style = "Bold Italic"
-
-[font.italic]
-family = "Hack"
-style = "Italic"
-
-[font.normal]
-family = "Hack"
-style = "Regular"
-
-[selection]
-save_to_clipboard = true
 
 [window.dimensions]
 columns = 120
@@ -54,3 +8,60 @@ lines = 30
 [window.padding]
 x = 10
 y = 10
+
+[font]
+size = 14
+
+  [font.normal]
+  family = "Hack"
+  style = "Regular"
+
+  [font.bold]
+  family = "Hack"
+  style = "Bold"
+
+  [font.italic]
+  family = "Hack"
+  style = "Italic"
+
+  [font.bold_italic]
+  family = "Hack"
+  style = "Bold Italic"
+
+[colors.primary]
+background = "0x1e2127"
+foreground = "0xabb2bf"
+bright_foreground = "0xe6efff"
+
+[colors.normal]
+black = "0x1e2127"
+red = "0xe06c75"
+green = "0x98c379"
+yellow = "0xd19a66"
+blue = "0x61afef"
+magenta = "0xc678dd"
+cyan = "0x56b6c2"
+white = "0x828791"
+
+[colors.bright]
+black = "0x5c6370"
+red = "0xe06c75"
+green = "0x98c379"
+yellow = "0xd19a66"
+blue = "0x61afef"
+magenta = "0xc678dd"
+cyan = "0x56b6c2"
+white = "0xe6efff"
+
+[colors.dim]
+black = "0x1e2127"
+red = "0xe06c75"
+green = "0x98c379"
+yellow = "0xd19a66"
+blue = "0x61afef"
+magenta = "0xc678dd"
+cyan = "0x56b6c2"
+white = "0x828791"
+
+[selection]
+save_to_clipboard = true

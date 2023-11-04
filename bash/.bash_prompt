@@ -99,9 +99,9 @@ if [ "$color_prompt" = yes ]; then
   PS1+="\[${userStyle}\]\u";
   PS1+="\[${green}\]@";
   PS1+="\[${hostStyle}\]\H\[${reset}\]";
-  PS1+="\[${black}\] in ";
-  PS1+="\[${purple}\]\W\[${black}\]]";
-  PS1+="\$(prompt_git \"\[${black}\] on \[${red}\]\" \"\[${cyan}\]\")"; # Git repository details
+  PS1+="\[${reset}\] in ";
+  PS1+="\[${purple}\]\W\[${reset}\]]";
+  PS1+="\$(prompt_git \"\[${reset}\] on \[${red}\]\" \"\[${cyan}\]\")"; # Git repository details
   PS1+="\[${reset}\]\n\$ ";
 else
   PS1="\A [\j] [${debian_chroot:+($debian_chroot)}\u@\H in \W]\n\$ "
