@@ -1,0 +1,52 @@
+# i3status configuration file.
+# see "man i3status" for documentation.
+
+# It is important that this file is edited as UTF-8.
+# The following line should contain a sharp s:
+# ß
+# If the above line is not correctly displayed, fix your editor first!
+
+general {
+        colors = true
+        interval = 5
+}
+
+order += "cpu_usage"
+order += "memory"
+order += "disk /"
+order += "wireless _first_"
+order += "load"
+order += "battery all"
+order += "tztime local"
+
+cpu_usage {
+	format = "CPU %usage {%cpu0 %cpu1}"
+	max_threshold = 75
+}
+
+memory {
+        format = "MEM %used | %available"
+        threshold_degraded = "1G"
+        format_degraded = "MEMORY < %available"
+}
+
+disk "/" {
+        format = "DISK %avail"
+}
+
+wireless _first_ {
+        format_up = "W: (%quality at %essid)"
+        format_down = "W: down"
+}
+
+load {
+        format = "%1min"
+}
+
+battery all {
+        format = "%status %percentage %remaining"
+}
+
+tztime local {
+        format = "%d-%m %H:%M"
+}

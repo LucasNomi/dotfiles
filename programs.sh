@@ -1,3 +1,3 @@
 #!/bin/bash 
 export PROGRAMS=("neofetch" "tmux" "htop" "alacritty" "rofi" "i3" "dmenu" "i3status" "feh")
-export CONFIG=("bash" "git" "neofetch" "tmux" "htop" "alacritty" "rofi" "i3")
+export CONFIG=("bash" "git" "neofetch" "tmux" "htop" "alacritty" "rofi" "i3" "i3status")
