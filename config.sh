@@ -8,7 +8,7 @@ else
     echo "Proceeding to configuration..."
 fi
 
-for str in ${PROGRAMS[@]}; do
+for str in ${CONFIG[@]}; do
     if [ -x "$(find . -maxdepth 1 -name $str)" ]; then
 	echo "Directory for $str configuration found"
 	echo "Link configuration contents to:"
