@@ -28,10 +28,3 @@ if ! [ -x "$(command -v neofetch)" ]; then
 else
   neofetch
 fi
-
-if ! [ -d "$HOME/.asdf" ]; then
-  echo "ASDF was not found"
-else
-  source "$HOME/.asdf/asdf.sh"
-  source "$HOME/.asdf/completions/asdf.bash"
-fi
