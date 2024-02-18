@@ -1,5 +1,6 @@
 #!/bin/bash
-source programs.sh
+
+CONFIG=("git" "neofetch" "tmux" "htop" "alacritty" "rofi" "i3" "i3status")
 
 if ! [ -x "$(command -v stow)" ]; then
     echo "stow not found"

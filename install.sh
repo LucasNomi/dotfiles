@@ -1,7 +1,8 @@
 #!/bin/bash
-source programs.sh 
 
-sudo apt install ${PROGRAMS[@]}
+DOWNLOADS=("neofetch" "tmux" "htop" "alacritty" "rofi" "i3" "i3status" "dmenu" "feh") 
+
+sudo apt install ${DOWNLOADS[@]}
 
 echo "Installation done."
 
