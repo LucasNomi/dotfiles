@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOWNLOADS=("neofetch" "tmux" "htop" "alacritty" "rofi" "i3" "i3status" "dmenu" "feh") 
+DOWNLOADS=("neofetch" "tmux" "htop") 
 
 sudo apt install ${DOWNLOADS[@]}
 

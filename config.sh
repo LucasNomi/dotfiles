@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CONFIG=("git" "neofetch" "tmux" "htop" "alacritty" "rofi" "i3" "i3status")
+CONFIG=("git" "neofetch" "tmux")
 
 if ! [ -x "$(command -v stow)" ]; then
     echo "stow not found"
