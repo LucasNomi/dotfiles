@@ -1,7 +1,6 @@
 set nocp
 filetype on
 filetype plugin on
-filetype indent on
 syntax on
 set relativenumber
 set cursorline
