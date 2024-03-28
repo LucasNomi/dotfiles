@@ -12,6 +12,10 @@ unset file
 
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+export EDITOR=/usr/bin/vim
+export QT_QPA_PLATFORMTHEME="qt5ct"
+export QT_AUTO_SCREEN_SCALE_FACTOR=0
+export GTK2_RC_FILE="$HOME/.gtkrc-2.0"
 
 # Don't put duplicate lines or lines starting with space in the history.
 HISTCONTROL=ignoreboth
@@ -24,6 +28,10 @@ HISTFILESIZE=2000
 shopt -s histappend
 
 shopt -s cdspell
+
+shopt -s checkwinsize
+
+shopt -s expand_aliases
 
 # enable programmable completion features
 if ! shopt -oq posix; then
@@ -46,6 +54,8 @@ fi
 
 # Added by Toolbox App
 export PATH="$PATH:/home/lucas/.local/share/JetBrains/Toolbox/scripts"
+
+xhost +local:root > /dev/null 2>&1
 
 # Run neofetch
 #if ! [ -x "$(command -v neofetch)" ]; then
