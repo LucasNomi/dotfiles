@@ -4,7 +4,11 @@ CONFIG=("git" "neofetch" "tmux" "vim")
 
 if ! [ -x "$(command -v stow)" ]; then
     echo "stow not found"
-    sudo apt install stow
+    if grep -q ID_LIKE=arch "/etc/os-release"; then
+      sudo pacman -S stow
+    else
+      sudo apt install stow
+    fi
 else
     echo "Proceeding to configuration..."
 fi
@@ -13,7 +17,7 @@ for str in ${CONFIG[@]}; do
     if [ -x "$(find . -maxdepth 1 -name $str)" ]; then
 	echo "Directory for $str configuration found"
 	echo "Link configuration contents to:"
-	select pth in HOME CONFIG
+	select pth in HOME CONFIG JUMP
 	do
 	    case $pth in
         "HOME")
@@ -21,6 +25,9 @@ for str in ${CONFIG[@]}; do
           break;;
         "CONFIG")
           stow -t $HOME/.config/ $str
+          break;;
+        "JUMP")
+          echo "Jumping to next configuration"
           break;;
         *)
           echo "Invalid option"

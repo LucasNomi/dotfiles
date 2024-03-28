@@ -1,8 +1,11 @@
 #!/bin/bash
 
 DOWNLOADS=("neofetch" "tmux" "htop") 
-
-sudo apt install ${DOWNLOADS[@]}
+if grep -q ID_LIKE=arch "/etc/os-release"; then
+  sudo pacman -S ${DOWNLOADS[@]}
+else
+  sudo apt install ${DOWNLOADS[@]}
+fi
 
 echo "Installation done."
 
