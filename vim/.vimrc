@@ -2,6 +2,7 @@ set nocp
 filetype on
 filetype plugin on
 syntax on
+colorscheme retrobox
 set relativenumber
 set cursorline
 set shiftwidth=4
