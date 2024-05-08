@@ -3,6 +3,7 @@ set visualbell
 filetype on
 filetype plugin on
 syntax on
+set background=dark
 set relativenumber
 set cursorline
 set shiftwidth=4

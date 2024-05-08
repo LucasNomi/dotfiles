@@ -2,6 +2,7 @@ set nocp
 filetype on
 filetype plugin on
 syntax on
+set background=dark
 colorscheme retrobox
 set relativenumber
 set cursorline
