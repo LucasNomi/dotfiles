@@ -3,7 +3,9 @@ filetype on
 filetype plugin on
 syntax on
 set background=dark
-colorscheme retrobox
+if v:version > 900
+  colorscheme retrobox
+endif
 set relativenumber
 set cursorline
 set shiftwidth=4
