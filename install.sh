@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOWNLOADS=("tmux" "htop") 
+DOWNLOADS=("tmux" "htop")
 if grep -q ID_LIKE=arch "/etc/os-release"; then
   sudo pacman -S ${DOWNLOADS[@]}
 else
