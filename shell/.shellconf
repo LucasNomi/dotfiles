@@ -14,11 +14,6 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-# set PATH so it includes jetbrains toolbox if it exists
-if [ -d "$HOME/jetbrains-toolbox" ] ; then
-    PATH="$HOME/jetbrains-toolbox:$PATH"
-fi
-
 # ALIASES
 # enable color support of ls and also add handy aliases
 alias ls='ls -ph --color=auto'
@@ -41,4 +36,3 @@ alias bat='upower -i /org/freedesktop/UPower/devices/battery_BAT0'
 alias cp='cp -i'
 alias df='df -h'
 alias free='free -m'
-alias logseq="logseq &"
